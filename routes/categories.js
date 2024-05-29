@@ -21,8 +21,8 @@ const { checkAuth } = require("../middlewares/auth.js");
 
 // Обрабатываем GET-запрос с роутом '/categories'
 categoriesRouter.post('/categories', findAllCategories, checkIsCategoryExists, checkEmptyName, checkAuth, createCategory, sendCategoryCreated);
-categoriesRouter.put('/categories:id', checkEmptyName, checkAuth, updateCategory, sendCategoryUpdated);
-categoriesRouter.delete('/categories:id', checkAuth, deleteCategory, sendCategoryDeleted);
+categoriesRouter.put('/categories/:id', checkEmptyName, checkAuth, updateCategory, sendCategoryUpdated);
+categoriesRouter.delete('/categories/:id', checkAuth, deleteCategory, sendCategoryDeleted);
 categoriesRouter.get("/categories", findAllCategories, sendAllCategories);
 categoriesRouter.get("/categories/:id", findCategoryById, sendСategoryById);
 
